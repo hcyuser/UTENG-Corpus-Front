@@ -35,7 +35,7 @@ echo "Query Result: ".$br;
 if ($result = $mysqli->query($sql)) {
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
-        echo $row . $br ;
+        echo $row->id . $br ;
     }
     $result->free();
 }

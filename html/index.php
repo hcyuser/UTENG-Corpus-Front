@@ -5,10 +5,10 @@
 
 <body>
 <form action="./afterquery.php" method="post">
-  Start YYYY-MM-DD:<br>
+  Start DateYYYY-MM-DD:<br>
   <input type="text" name="sd" required><br>
   End Date YYYY-MM-DD:<br>
-  <input type="date" name="ed" required><br>
+  <input type="text" name="ed" required><br>
   Start Overall Quality:<br>
   <input type="text" name="so" required><br>
   End Overall Quality:<br>

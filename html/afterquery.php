@@ -23,18 +23,18 @@ if ($mysqli->connect_errno) {
 <?php
 print_r($_POST);
   if($_POST["sd"] && $_POST["ed"] && $_POST["so"] && $_POST["eo"]){
-    $sd = $_POST["sd"];
-    $ed = $_POST["ed"];
-    $so = $_POST["so"];
-    $eo = $_POST["eo"];
+    $sd = $mysqli->escape_string($_POST["sd"]);
+    $ed =  $mysqli->escape_string($_POST["ed"]);
+    $so =  $mysqli->escape_string($_POST["so"]);
+    $eo =  $mysqli->escape_string($_POST["eo"]);
 
   }
-$sql = "SELECT * FROM response WHERE quality >= $so AND quality <= $eo AND STR_TO_DATE(date, \"%m/%d/%y\") >= \"$sd\" AND STR_TO_DATE(date, \"%m/%d/%y\")<= \"$ed\" LIMIT 10 ";
-//echo "\$mysqli -> query(\"$sql\")" . $br;
-$escape = $mysqli->escape_string($sql);
-echo $escape;
+$sql = "SELECT * FROM response WHERE quality >= $so AND quality <= $eo AND STR_TO_DATE(date, '%m/%d/%y') >= '$sd' AND STR_TO_DATE(date, '%m/%d/%y')<= '$ed' LIMIT 10 ";
+echo "\$mysqli -> query(\"$sql\")" . $br;
+//$escape = $mysqli->escape_string($sql);
+//echo $escape;
 echo "Query Result: ".$br;
-if ($result = mysqli_query($mysqli, $mysqli->escape_string($sql))) {
+if ($result = mysqli_query($mysqli,$sql) {
     print_r($result);
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {

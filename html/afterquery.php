@@ -34,8 +34,8 @@ echo "\$mysqli -> query(\"$sql\")" . $br;
 //$escape = $mysqli->escape_string($sql);
 //echo $escape;
 echo "Query Result: ".$br;
-if ($result = mysqli_query($mysqli,$sql) {
-    //print_r($result);
+if ($result = mysqli_query($mysqli,$sql)) {
+    print_r($result);
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
         echo $row['id'] . $br ;

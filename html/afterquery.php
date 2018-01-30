@@ -38,7 +38,7 @@ if ($result = mysqli_query($mysqli,$sql)) {
     print_r($result);
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
-        echo $row['id'] . $br ;
+        echo $row['id']+" "+$row['tid']+" "+$row['content']+$br ;
     }
     $result->free();
 }else{

@@ -28,7 +28,7 @@ if ($mysqli->connect_errno) {
     echo $_POST["eo"];
 
   }
-$sql = "SELECT * FROM response WHERE quality >= '$_POST["so"]' AND quality <= '$_POST["eo"]' ";
+$sql = "SELECT * FROM response WHERE quality >= '$_POST["so"]' AND quality <= '$_POST["eo"]' LIMIT 10";
 echo "\$mysqli -> query(\"$sql\")" . $br;
 echo "Query Result: ".$br;
 if ($result = $mysqli->query($sql)) {

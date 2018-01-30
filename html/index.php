@@ -9,10 +9,12 @@
   <input type="text" name="sd"><br>
   End Date:<br>
   <input type="text" name="ed">
+  <br>
   Start Overall Quality:<br>
-  <input type="text" name="so"><br>
+  <input type="text" name="so">
   End Overall Quality:<br>
   <input type="text" name="eo">
+  <br>
   <INPUT TYPE=submit value="送出查詢">
 </form>
 </body>

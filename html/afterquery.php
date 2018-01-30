@@ -21,8 +21,9 @@ if ($mysqli->connect_errno) {
 
 
 <?php
+print_r($_POST);
   if($_POST["sd"] && $_POST["ed"] && $_POST["so"] && $_POST["eo"]){
-    $sd =  $_POST["sd"];
+    $sd = $_POST["sd"];
     $ed = $_POST["ed"];
     $so = $_POST["so"];
     $eo = $_POST["eo"];

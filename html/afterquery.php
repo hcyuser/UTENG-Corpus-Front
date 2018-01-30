@@ -22,13 +22,13 @@ if ($mysqli->connect_errno) {
 
 <?php
   if($_POST["sd"] && $_POST["ed"] && $_POST["so"] && $_POST["eo"]){
-    echo $_POST["sd"];
-    echo $_POST["ed"];
-    echo $_POST["so"];
-    echo $_POST["eo"];
+    $sd =  $_POST["sd"];
+    $ed = $_POST["ed"];
+    $so = $_POST["so"];
+    $eo = $_POST["eo"];
 
   }
-$sql = "SELECT * FROM response WHERE quality >= '$_POST["so"]' AND quality <= '$_POST["eo"]' LIMIT 10";
+$sql = "SELECT * FROM response WHERE quality >= '$so' AND quality <= '$eo' LIMIT 10 ";
 echo "\$mysqli -> query(\"$sql\")" . $br;
 echo "Query Result: ".$br;
 if ($result = $mysqli->query($sql)) {

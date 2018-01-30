@@ -6,9 +6,9 @@
 <body>
 <form action="./afterquery.php" method="post">
   Start DateYYYY-MM-DD:<br>
-  <input type="text" name="sd" required><br>
+  <input type="text" name="sd" value="2000-01-01" required><br>
   End Date YYYY-MM-DD:<br>
-  <input type="text" name="ed" required><br>
+  <input type="text" name="ed" value="2017-01-01" required><br>
   Start Overall Quality:<br>
   <input type="text" name="so" required><br>
   End Overall Quality:<br>

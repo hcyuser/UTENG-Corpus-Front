@@ -8,10 +8,9 @@
   Start Date:<br>
   <input type="text" name="sd"><br>
   End Date:<br>
-  <input type="text" name="ed">
-  <br>
+  <input type="text" name="ed"><br>
   Start Overall Quality:<br>
-  <input type="text" name="so">
+  <input type="text" name="so"><br>
   End Overall Quality:<br>
   <input type="text" name="eo">
   <br>

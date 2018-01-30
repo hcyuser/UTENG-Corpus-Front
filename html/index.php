@@ -6,9 +6,9 @@
 <body>
 <form action="./afterquery.php" method="post">
   Start Date:<br>
-  <input type="text" name="sd"><br>
+  <input type="date" name="sd"><br>
   End Date:<br>
-  <input type="text" name="ed"><br>
+  <input type="date" name="ed"><br>
   Start Overall Quality:<br>
   <input type="text" name="so"><br>
   End Overall Quality:<br>

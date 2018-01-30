@@ -10,9 +10,9 @@
   End Date YYYY-MM-DD:<br>
   <input type="text" name="ed" value="2017-01-01" required><br>
   Start Overall Quality:<br>
-  <input type="text" name="so" required><br>
+  <input type="text" name="so" value="3" required><br>
   End Overall Quality:<br>
-  <input type="text" name="eo" required>
+  <input type="text" name="eo" value="5" required>
   <br>
   <INPUT TYPE=submit value="送出查詢">
 </form>

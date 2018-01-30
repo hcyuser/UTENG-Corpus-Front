@@ -43,5 +43,5 @@ if ($result = $mysqli->query($sql)) {
 
 
 <?php
-mysqli_close($link);
+  $mysqli->close();
 ?>

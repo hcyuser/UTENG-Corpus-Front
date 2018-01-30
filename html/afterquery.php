@@ -30,7 +30,9 @@ print_r($_POST);
 
   }
 $sql = "SELECT * FROM response WHERE quality >= $so AND quality <= $eo AND STR_TO_DATE(date, \"%m/%d/%y\") >= \"$sd\" AND STR_TO_DATE(date, \"%m/%d/%y\")<= \"$ed\" LIMIT 10 ";
-echo "\$mysqli -> query(\"$sql\")" . $br;
+//echo "\$mysqli -> query(\"$sql\")" . $br;
+$escape = $mysqli->escape_string($sql);
+echo $escape;
 echo "Query Result: ".$br;
 if ($result = mysqli_query($mysqli, $mysqli->escape_string($sql))) {
     print_r($result);

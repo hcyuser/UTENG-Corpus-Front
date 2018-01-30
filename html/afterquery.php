@@ -10,8 +10,8 @@ $br = "<br/>";
 /* check connection */
 if ($mysqli->connect_errno) {
     echo "Error: Unable to connecct to MySQL.<br/>";
-    echo "Debugging errno: " . $mysqli->connect_errno() . $br;
-    echo "Debugging error: " . $mysqli->connect_error() . $br;
+    echo "Debugging errno: " . $mysqli->errno() . $br;
+    echo "Debugging error: " . $mysqli->error() . $br;
     exit;
 }
 
@@ -42,8 +42,8 @@ if ($result = mysqli_query($mysqli, $mysqli->escape_string($sql))) {
 }else{
   print_r($result);
   echo "Error: Unable to connecct to MySQL.<br/>";
-  echo "Debugging errno: " . $mysqli->connect_errno() . $br;
-  echo "Debugging error: " . $mysqli->connect_error() . $br;
+  echo "Debugging errno: " . $mysqli->errno() . $br;
+  echo "Debugging error: " . $mysqli->error() . $br;
   exit;
 }
 ?>

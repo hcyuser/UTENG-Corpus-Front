@@ -29,7 +29,7 @@ print_r($_POST);
     $eo = $_POST["eo"];
 
   }
-$sql = "SELECT * FROM response WHERE quality >= '$so' AND quality <= '$eo' LIMIT 10 ";
+$sql = "SELECT * FROM response WHERE quality >= $so AND quality <= $eo LIMIT 10 ";
 echo "\$mysqli -> query(\"$sql\")" . $br;
 echo "Query Result: ".$br;
 if ($result = $mysqli->query($sql)) {

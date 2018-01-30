@@ -28,13 +28,13 @@ if ($mysqli->connect_errno) {
     echo $_POST["eo"];
 
   }
-$sql = "SELECT * FROM professor WHERE id = 1234";
+$sql = "SELECT * FROM response WHERE quality >= '$_POST["so"]' AND quality <= '$_POST["eo"]' ";
 echo "\$mysqli -> query(\"$sql\")" . $br;
 echo "Query Result: ".$br;
 if ($result = $mysqli->query($sql)) {
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
-        echo json_encode($row);
+        echo $row . $br ;
     }
     $result->free();
 }

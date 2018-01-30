@@ -14,8 +14,8 @@ if ($mysqli->connect_errno) {
     echo "Debugging error: " . $mysqli->connect_error() . $br;
     exit;
 }
-echo "Success: A proper connection to MySQL was made! The $database database is great." . $br;
-echo "Host information: " . $mysqli->host_info . $br;
+//echo "Success: A proper connection to MySQL was made! The $database database is great." . $br;
+//echo "Host information: " . $mysqli->host_info . $br;
 
 $sql = "SELECT * FROM professor WHERE id = 1234";
 echo "\$mysqli -> query(\"$sql\")" . $br;

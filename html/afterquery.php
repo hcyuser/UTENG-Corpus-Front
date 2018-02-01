@@ -21,7 +21,7 @@ if ($mysqli->connect_errno) {
 
 
 <?php
-print_r($_POST);
+//print_r($_POST);
   if($_POST["sd"] && $_POST["ed"] && $_POST["so"] && $_POST["eo"]){
     $sd = $mysqli->escape_string($_POST["sd"]);
     $ed =  $mysqli->escape_string($_POST["ed"]);
@@ -35,11 +35,17 @@ echo "\$mysqli -> query(\"$sql\")" . $br;
 //echo $escape;
 echo "Query Result: ".$br;
 if ($result = mysqli_query($mysqli,$sql)) {
-    print_r($result);
+    //print_r($result);
     /* fetch associative array */
+    $randtxt = rand();
+    $myfile = fopen("./txtoutput/".$randtxt.".txt", "w") or die("Unable to open file!");
     while ($row = $result->fetch_assoc()) {
-        echo $row['id'].":".$row['tid'].":".$row['content'].$br ;
+        $show = $row['id'].":".$row['tid'].":".$row['content'].$br;
+        fwrite($myfile, $show);
+        echo $show;
     }
+    fclose($myfile);
+    echo "http://uteng.hcy.idv.tw/txtoutput/".$randtxt.".txt";
     $result->free();
 }else{
   print_r($result);

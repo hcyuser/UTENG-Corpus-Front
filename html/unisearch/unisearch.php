@@ -25,8 +25,8 @@ if ($mysqli->connect_errno) {
   if($_POST["sd"] && $_POST["ed"] && $_POST["sq"] && $_POST["eq"] && $_POST["school"]){
     $sd = $mysqli->escape_string($_POST["sd"]);
     $ed =  $mysqli->escape_string($_POST["ed"]);
-    $sq =  $mysqli->escape_string($_POST["so"]);
-    $eq =  $mysqli->escape_string($_POST["eo"]);
+    $sq =  $mysqli->escape_string($_POST["sq"]);
+    $eq =  $mysqli->escape_string($_POST["eq"]);
     $school =  $mysqli->escape_string($_POST["school"]);
   }
 $sql = "SELECT * FROM professor WHERE quality >= $sq AND quality <= $eq AND school like $school LIMIT 10";

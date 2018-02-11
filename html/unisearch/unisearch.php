@@ -29,7 +29,7 @@ if ($mysqli->connect_errno) {
     $eq =  $mysqli->escape_string($_POST["eq"]);
     $school =  $mysqli->escape_string($_POST["school"]);
   }
-$sql = "SELECT id FROM professor WHERE quality >= $sq AND quality <= $eq AND school like '$school' LIMIT 10";
+$sql = "SELECT id FROM professor WHERE quality >= $sq AND quality <= $eq AND school like '$school' LIMIT 1";
 //echo "\$mysqli -> query(\"$sql\")" . $br;
 //$escape = $mysqli->escape_string($sql);
 //echo $escape;
@@ -41,14 +41,14 @@ if ($result = mysqli_query($mysqli,$sql)) {
     $myfile = fopen("../txtoutput/".$randtxt.".txt", "w") or die("Unable to open file!");
     while ($row = $result->fetch_assoc()) {
         $tid = $row['id'];
-        $sql2 = "SELECT * FROM response WHERE tid = $tid LIMIT 10";
+        $sql2 = "SELECT * FROM response WHERE tid = $tid LIMIT 1";
         if ($result2 = mysqli_query($mysqli,$sql2)) {
           while ($row2 = $result2->fetch_assoc()) {
               $show = $row2['id'].":".$row2['tid'].":".$row2['content'];
               fwrite($myfile, $show."\r\n");
               echo $show.$br;
           }
-
+          $result2->free();
         }
 
 

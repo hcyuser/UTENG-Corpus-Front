@@ -41,7 +41,8 @@ if ($result = mysqli_query($mysqli,$sql)) {
     $myfile = fopen("../txtoutput/".$randtxt.".txt", "w") or die("Unable to open file!");
     while ($row = $result->fetch_assoc()) {
         $tid = $row['id'];
-        $sql2 = "SELECT * FROM response WHERE tid = $tid LIMIT 1";
+        echo $tid.$br;
+        /*$sql2 = "SELECT * FROM response WHERE tid = $tid LIMIT 1";
         if ($result2 = mysqli_query($mysqli,$sql2)) {
           while ($row2 = $result2->fetch_assoc()) {
               $show = $row2['id'].":".$row2['tid'].":".$row2['content'];
@@ -49,7 +50,7 @@ if ($result = mysqli_query($mysqli,$sql)) {
               echo $show.$br;
           }
           $result2->free();
-        }
+        }*/
 
 
 

@@ -56,7 +56,7 @@ $arrlength = count($tid);
 $randtxt = rand();
 $myfile = fopen("../txtoutput/".$randtxt.".txt", "w") or die("Unable to open file!");
 for($x = 0; $x < $arrlength; $x++){
-    $sql2 = "SELECT * FROM response WHERE tid = $tid[$x]";
+    $sql2 = "SELECT * FROM response WHERE tid = $tid[$x] LIMIT 20";
     if ($result2 = mysqli_query($mysqli,$sql2)) {
       while ($row2 = $result2->fetch_assoc()) {
           $show = $row2['id'].":".$row2['tid'].":".$row2['content'];

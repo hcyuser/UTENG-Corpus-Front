@@ -37,26 +37,12 @@ echo "Query Result: ".$br;
 if ($result = mysqli_query($mysqli,$sql)) {
     //print_r($result);
     /* fetch associative array */
-    $randtxt = rand();
-    $myfile = fopen("../txtoutput/".$randtxt.".txt", "w") or die("Unable to open file!");
+
+    $x1=0;
     while ($row = $result->fetch_assoc()) {
-        $tid = $row['id'];
-        echo $tid.$br;
-        /*$sql2 = "SELECT * FROM response WHERE tid = $tid LIMIT 1";
-        if ($result2 = mysqli_query($mysqli,$sql2)) {
-          while ($row2 = $result2->fetch_assoc()) {
-              $show = $row2['id'].":".$row2['tid'].":".$row2['content'];
-              fwrite($myfile, $show."\r\n");
-              echo $show.$br;
-          }
-          $result2->free();
-        }*/
-
-
-
+        $tid[$x1] = $row['id'];
+        $x1++;
     }
-    fclose($myfile);
-    echo "http://uteng.hcy.idv.tw/txtoutput/".$randtxt.".txt";
     $result->free();
 }else{
   //print_r($result);
@@ -65,6 +51,34 @@ if ($result = mysqli_query($mysqli,$sql)) {
   echo "Debugging error: " . $mysqli->error . $br;
   exit;
 }
+
+$arrlength = count($tid);
+$randtxt = rand();
+$myfile = fopen("../txtoutput/".$randtxt.".txt", "w") or die("Unable to open file!");
+for($x = 0; $x < $arrlength; $x++){
+    $sql2 = "SELECT * FROM response WHERE tid = $tid[$x] LIMIT 1";
+    if ($result2 = mysqli_query($mysqli,$sql2)) {
+      while ($row2 = $result2->fetch_assoc()) {
+          $show = $row2['id'].":".$row2['tid'].":".$row2['content'];
+          fwrite($myfile, $show."\r\n");
+          echo $show.$br;
+      }
+      $result2->free();
+    }else{
+      //print_r($result);
+      echo "Error: Unable to connecct to MySQL.<br/>";
+      echo "Debugging errno: " . $mysqli->errno . $br;
+      echo "Debugging error: " . $mysqli->error . $br;
+      exit;
+  }
+}
+
+
+
+fclose($myfile);
+echo "http://uteng.hcy.idv.tw/txtoutput/".$randtxt.".txt";
+
+
 ?>
 
 

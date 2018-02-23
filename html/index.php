@@ -5,6 +5,8 @@
 
 <body>
 <form action="./afterquery.php" method="post">
+  School Name:<br>
+  <input type="text" name="school" value="University of Delaware" required><br>
   Start DateYYYY-MM-DD:<br>
   <input type="text" name="sd" value="2000-01-01" required><br>
   End Date YYYY-MM-DD:<br>

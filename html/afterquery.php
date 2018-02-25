@@ -43,8 +43,11 @@ if ($result = mysqli_query($mysqli,$sql)) {
         //echo $show.$br;
     }
     fclose($myfile);
+
     echo "Query Result:".$br;
+    echo "<html><a href=\"";
     echo "http://uteng.hcy.idv.tw/txtoutput/".$school."-".$so.".txt";
+    echo "\">Download Here</a></html>";
     $result->free();
 }else{
   //print_r($result);

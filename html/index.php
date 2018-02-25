@@ -12,9 +12,10 @@
 <body>
 <div class="container">
 <div class="well well-lg">
-  This is a corpus database that collected the comments and other attributes from Rate My Professors.
-  It recorded the comments from Jan. 1999 to Jan. 2018, which curled from 25 Jan. 2018 to 25 Feb. 2018 by Google Cloud Platform (GCP).
-  The establisher of this database are <a href="http://163.21.236.197/~english/old_dat/teacher_int/Mei-ching-Ho.htm">Mei-ching Ho</a> and <a href="http://www.hcy.idv.tw/intro">HUANG, CHIH-YANG</a>.
+  This is a corpus database collecting the comments and other attributes from Rate My Professors.
+  It records the comments from Jan. 1999 to Jan. 2018, which are curled from 25 Jan. 2018 to 25 Feb. 2018 by Google Cloud Platform (GCP).
+  The establishers of this database are <a href="http://163.21.236.197/~english/old_dat/teacher_int/Mei-ching-Ho.htm">Mei-ching Ho</a> and <a href="http://www.hcy.idv.tw/intro">HUANG, CHIH-YANG</a>.
+  This project is sponsored by Ministry of Science and Technology (MOST), TAIWAN(R.O.C.).
 </div>
 
   <div class="panel panel-default">

@@ -36,7 +36,7 @@ if ($result = mysqli_query($mysqli,$sql)) {
     //print_r($result);
     /* fetch associative array */
     //$randtxt = rand();
-    $myfile = fopen("./txtoutput/".$randtxt."-".$so.".txt", "w") or die("Unable to open file!");
+    $myfile = fopen("./txtoutput/".$school."-".$so.".txt", "w") or die("Unable to open file!");
     while ($row = $result->fetch_assoc()) {
         $show = $row['id'].":".$row['tid'].":".$row['content'];
         fwrite($myfile, $show."\r\n");
@@ -44,7 +44,7 @@ if ($result = mysqli_query($mysqli,$sql)) {
     }
     fclose($myfile);
     echo "Query Result:".$br;
-    echo "<a href=\"http://uteng.hcy.idv.tw/txtoutput/".$randtxt."-".$so.".txt"."</a>";
+    echo "<a href=\"http://uteng.hcy.idv.tw/txtoutput/".$school."-".$so.".txt"."</a>";
     $result->free();
 }else{
   //print_r($result);

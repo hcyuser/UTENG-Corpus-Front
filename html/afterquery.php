@@ -46,7 +46,7 @@ if ($result = mysqli_query($mysqli,$sql)) {
     echo "Query Result:".$br;
     echo "<a href=\"";
     echo "http://uteng.hcy.idv.tw/txtoutput/".$school."-".$so.".txt";
-    echo "\"></a>";
+    echo "\">Download Here</a>";
     $result->free();
 }else{
   //print_r($result);

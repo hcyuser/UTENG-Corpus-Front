@@ -44,7 +44,9 @@ if ($result = mysqli_query($mysqli,$sql)) {
     }
     fclose($myfile);
     echo "Query Result:".$br;
+    echo "<a href=\"";
     echo "http://uteng.hcy.idv.tw/txtoutput/".$school."-".$so.".txt";
+    echo "\"></a>";
     $result->free();
 }else{
   //print_r($result);

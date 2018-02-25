@@ -22,12 +22,12 @@ if ($mysqli->connect_errno) {
 
 <?php
 //print_r($_POST);
-  if($_POST["sd"] && $_POST["ed"] && $_POST["so"] && $_POST["eo"]){
+  if($_POST["sd"] && $_POST["ed"] && $_POST["so"] && $_POST["eo"] &&  $_POST["school"] ){
     $sd = $mysqli->escape_string($_POST["sd"]);
     $ed =  $mysqli->escape_string($_POST["ed"]);
     $so =  $mysqli->escape_string($_POST["so"]);
     $eo =  $mysqli->escape_string($_POST["eo"]);
-
+    $school =  $mysqli->escape_string($_POST["school"]);
   }
 $sql = "SELECT * FROM response WHERE tid IN (SELECT id FROM professor WHERE quality >= $so AND quality <= $eo AND school like '$school') AND STR_TO_DATE(date, '%m/%d/%Y') >= '$sd' AND STR_TO_DATE(date, '%m/%d/%Y')<= '$ed' ";
 //echo "\$mysqli -> query(\"$sql\")" . $br;

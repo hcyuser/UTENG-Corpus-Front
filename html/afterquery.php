@@ -18,8 +18,6 @@ if ($mysqli->connect_errno) {
 //echo "Success: A proper connection to MySQL was made! The $database database is great." . $br;
 //echo "Host information: " . $mysqli->host_info . $br;
 ?>
-
-
 <?php
 //print_r($_POST);
   if($_POST["sd"] && $_POST["ed"] && $_POST["so"] && $_POST["eo"] &&  $_POST["school"] ){
@@ -33,19 +31,20 @@ $sql = "SELECT * FROM response WHERE tid IN (SELECT id FROM professor WHERE qual
 //echo "\$mysqli -> query(\"$sql\")" . $br;
 //$escape = $mysqli->escape_string($sql);
 //echo $escape;
-echo "Query Result: ".$br;
+//echo "Query Result: ".$br;
 if ($result = mysqli_query($mysqli,$sql)) {
     //print_r($result);
     /* fetch associative array */
-    $randtxt = rand();
-    $myfile = fopen("./txtoutput/".$randtxt.".txt", "w") or die("Unable to open file!");
+    //$randtxt = rand();
+    $myfile = fopen("./txtoutput/".$randtxt.$so.".txt", "w") or die("Unable to open file!");
     while ($row = $result->fetch_assoc()) {
         $show = $row['id'].":".$row['tid'].":".$row['content'];
         fwrite($myfile, $show."\r\n");
-        echo $show.$br;
+        //echo $show.$br;
     }
     fclose($myfile);
-    echo "http://uteng.hcy.idv.tw/txtoutput/".$randtxt.".txt";
+    echo "Query Result:".$br;
+    echo "<a href=\"http://uteng.hcy.idv.tw/txtoutput/".$randtxt.$so.".txt"."</a>";
     $result->free();
 }else{
   //print_r($result);

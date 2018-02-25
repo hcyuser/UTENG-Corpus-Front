@@ -8,11 +8,11 @@
   School Name:<br>
   <input type="text" name="school" value="University of Delaware" required><br>
   Start DateYYYY-MM-DD:<br>
-  <input type="text" name="sd" value="2000-01-01" required><br>
+  <input type="text" name="sd" value="2014-01-01" required><br>
   End Date YYYY-MM-DD:<br>
-  <input type="text" name="ed" value="2017-01-01" required><br>
+  <input type="text" name="ed" value="2017-12-31" required><br>
   Start Overall Quality:<br>
-  <input type="text" name="so" value="3" required><br>
+  <input type="text" name="so" value="4" required><br>
   End Overall Quality:<br>
   <input type="text" name="eo" value="5" required>
   <br>

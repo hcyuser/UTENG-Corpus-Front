@@ -10,12 +10,28 @@
 </HEAD>
 
 <body>
+<nav class="navbar navbar-inverse">
+  <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Rate My professor Corpus System</a>
+  </div>
+</nav>
 <div class="container">
 <div class="well well-lg">
+  <h3>
+  Introduction
+  </h3>
+  <p><h4>
   This is a corpus database collecting the comments and other attributes from Rate My Professors.
   It records the comments from Jan. 1999 to Jan. 2018, which are curled from 25 Jan. 2018 to 25 Feb. 2018 by Google Cloud Platform (GCP).
   The establishers of this database are <a href="http://163.21.236.197/~english/old_dat/teacher_int/Mei-ching-Ho.htm">Mei-ching Ho</a> and <a href="http://www.hcy.idv.tw/intro">HUANG, CHIH-YANG</a>.
   This project is sponsored by Ministry of Science and Technology (MOST), TAIWAN(R.O.C.).
+  </p></h4>
 </div>
 
   <div class="panel panel-default">

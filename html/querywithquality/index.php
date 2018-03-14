@@ -1,10 +1,9 @@
 <?php
-      if($_SERVER["HTTPS"] != "on")
-      {
-          header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
-          exit();
-      }
-?>
+      if(empty($_SERVER["HTTPS"])) {
+        $https_login = "https://" . $_SERVER["SERVER_NAME"] . '/intro' ;
+        header("Location: $https_login");
+        exit();
+}
 <HTML>
 <HEAD>
 <meta charset="utf-8">

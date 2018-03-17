@@ -37,11 +37,10 @@
   <div class="panel panel-default">
     <div class="panel-heading">Query Zone</div>
     <div class="panel-body">
-      Goal: query the number of professors in a university
+      Goal: query the number of professors in an university
       <form action="./afterquery.php" method="post">
         <div class="form-group">
           <label>School Name:</label>
-          <br>
           <input type="text" class="form-control" name="school" value="University of Delaware" required><br>
         </div>
           <br>

@@ -38,7 +38,7 @@ if ($result = mysqli_query($mysqli,$sql)) {
     //$randtxt = rand();
     $myfile = fopen("../txtoutput/".$school."-".$so.".txt", "w") or die("Unable to open file!");
     while ($row = $result->fetch_assoc()) {
-        $show = $row['quality'].":".$row['content'];
+        $show = $row['quality']." : ".$row['content'];
         fwrite($myfile, $show."\r\n");
         //echo $show.$br;
     }

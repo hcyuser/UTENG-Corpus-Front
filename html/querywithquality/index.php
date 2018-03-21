@@ -58,13 +58,13 @@
         <div class="form-group">
           <label>Start Overall Quality:</label>
           <br>
-          <input type="text" class="form-control" name="so" value="4" required><br>
+          <input type="text" class="form-control" name="so" value="1" required><br>
         </div>
 
         <div class="form-group">
           <label>End Overall Quality:</label>
           <br>
-          <input type="text" class="form-control" name="eo" value="5" required>
+          <input type="text" class="form-control" name="eo" value="2" required>
         </div>
           <br>
         <button type="submit" class="btn btn-primary">Submit</button>

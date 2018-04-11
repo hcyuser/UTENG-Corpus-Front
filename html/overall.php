@@ -18,7 +18,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../">Rate My professor Corpus System</a>
+                <a class="navbar-brand" href="./">Rate My professor Corpus System</a>
   </div>
 </nav>
 <div class="container">
@@ -37,11 +37,34 @@
   <div class="panel panel-default">
     <div class="panel-heading">Query Zone</div>
     <div class="panel-body">
-      Goal: query the number of professors in an university
       <form action="./afterquery.php" method="post">
         <div class="form-group">
           <label>School Name:</label>
+          <br>
           <input type="text" class="form-control" name="school" value="University of Delaware" required><br>
+        </div>
+        <div class="form-group">
+          <label>Start DateYYYY-MM-DD:</label>
+          <br>
+          <input type="text" class="form-control" name="sd" value="2014-01-01" required><br>
+        </div>
+
+        <div class="form-group">
+          <label>End Date YYYY-MM-DD:</label>
+          <br>
+          <input type="text" class="form-control" name="ed" value="2017-12-31" required><br>
+        </div>
+
+        <div class="form-group">
+          <label>Start Overall Quality:</label>
+          <br>
+          <input type="text" class="form-control" name="so" value="4" required><br>
+        </div>
+
+        <div class="form-group">
+          <label>End Overall Quality:</label>
+          <br>
+          <input type="text" class="form-control" name="eo" value="5" required>
         </div>
           <br>
         <button type="submit" class="btn btn-primary">Submit</button>

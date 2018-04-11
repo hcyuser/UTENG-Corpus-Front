@@ -66,26 +66,23 @@
           <br>
           <input type="text" class="form-control" name="eo" value="2" required>
         </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" name="cb1" value="1.0">
-        <label class="form-check-label" for="inlineCheckbox1">1.0</label>
+        <div class="form-group">
+          <label>Quality in Comments:</label>
+          <br>
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="cb1" value="1.0">
+            <label class="form-check-label" for="inlineCheckbox1">1.0</label>
+            <input class="form-check-input" type="checkbox" name="cb2" value="2.0">
+            <label class="form-check-label" for="inlineCheckbox2">2.0</label>
+            <input class="form-check-input" type="checkbox" name="cb3" value="3.0">
+            <label class="form-check-label" for="inlineCheckbox3">3.0</label>
+            <input class="form-check-input" type="checkbox" name="cb4" value="4.0">
+            <label class="form-check-label" for="inlineCheckbox3">4.0</label>
+            <input class="form-check-input" type="checkbox" name="cb5" value="5.0">
+            <label class="form-check-label" for="inlineCheckbox3">5.0</label>
+            </div>
         </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" name="cb2" value="2.0">
-        <label class="form-check-label" for="inlineCheckbox2">2.0</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" name="cb3" value="3.0">
-        <label class="form-check-label" for="inlineCheckbox3">3.0</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" name="cb4" value="4.0">
-        <label class="form-check-label" for="inlineCheckbox3">4.0</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" name="cb5" value="5.0">
-        <label class="form-check-label" for="inlineCheckbox3">5.0</label>
-        </div>
+
         <br>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

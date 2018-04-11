@@ -38,19 +38,19 @@ if ($result = mysqli_query($mysqli,$sql)) {
     //$randtxt = rand();
     $myfile = fopen("../txtoutput/".$school."-".$so.".txt", "w") or die("Unable to open file!");
     while ($row = $result->fetch_assoc()) {
-      if(isset($_POST['cb1']) && (1.0<= $row['quality'] <= 1.9)){
+      if(isset($_POST['cb1']) && (1.0<= $row['quality'] && $row['quality']<= 1.9)){
         $show = $row['id'].":".$row['tid'].":".$row['quality'].":".$row['content'];
         fwrite($myfile, $show."\r\n");
-      }else if(isset($_POST['cb2']) && (2.0<= $row['quality'] <= 2.9)){
+      }else if(isset($_POST['cb2']) && (2.0<= $row['quality'] && $row['quality']<= 2.9)){
         $show = $row['id'].":".$row['tid'].":".$row['quality'].":".$row['content'];
         fwrite($myfile, $show."\r\n");
-      }else if(isset($_POST['cb3']) && (3.0<= $row['quality'] <= 3.9)){
+      }else if(isset($_POST['cb3']) && (3.0<= $row['quality'] && $row['quality']<= 3.9)){
         $show = $row['id'].":".$row['tid'].":".$row['quality'].":".$row['content'];
         fwrite($myfile, $show."\r\n");
-      }else if(isset($_POST['cb4']) && (4.0<= $row['quality'] <= 4.9)){
+      }else if(isset($_POST['cb4']) && (4.0<= $row['quality'] && $row['quality']<= 4.9)){
         $show = $row['id'].":".$row['tid'].":".$row['quality'].":".$row['content'];
         fwrite($myfile, $show."\r\n");
-      }else if(isset($_POST['cb5']) && (5.0<= $row['quality'] <= 5.9)){
+      }else if(isset($_POST['cb5']) && (5.0<= $row['quality'] &&  $row['quality']<= 5.9)){
         $show = $row['id'].":".$row['tid'].":".$row['quality'].":".$row['content'];
         fwrite($myfile, $show."\r\n");
       }

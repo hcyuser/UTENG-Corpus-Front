@@ -27,7 +27,7 @@ if ($mysqli->connect_errno) {
     $eo =  $mysqli->escape_string($_POST["eo"]);
     $school =  $mysqli->escape_string($_POST["school"]);
   }
-$sql = "SELECT * FROM response WHERE tid IN (SELECT id FROM professor WHERE quality >= $so AND quality <= $eo AND school like '$school') AND STR_TO_DATE(date, '%m/%d/%Y') >= '$sd' AND STR_TO_DATE(date, '%m/%d/%Y')<= '$ed' AND quality >= $so AND quality <= $eo";
+$sql = "SELECT * FROM response WHERE tid IN (SELECT id FROM professor WHERE quality >= $so AND quality <= $eo AND school like '$school') AND quality >= $so AND quality <= $eo AND STR_TO_DATE(date, '%m/%d/%Y') >= '$sd' AND STR_TO_DATE(date, '%m/%d/%Y')<= '$ed' ";
 //echo "\$mysqli -> query(\"$sql\")" . $br;
 //$escape = $mysqli->escape_string($sql);
 //echo $escape;

@@ -20,7 +20,7 @@
     }
 
     $myfile = fopen("./txtoutput/".$school."-".$so.".txt", "w") or die("Unable to open file!");
-    $rs=read_multi_record($__db, "SELECT * FROM response WHERE tid IN (SELECT id FROM professor WHERE quality >= $so AND quality <= $eo AND school like '$school') AND STR_TO_DATE(date, '%m/%d/%Y') >= '$sd' AND STR_TO_DATE(date, '%m/%d/%Y')<= '$ed' ", array(10), array());
+    $rs=read_multi_record($__db, "SELECT * FROM response WHERE tid IN (SELECT id FROM professor WHERE quality >= $so AND quality <= $eo AND school like '$school') AND TO_DATE(date, '%m/%d/%Y') >= '$sd' AND TO_DATE(date, '%m/%d/%Y')<= '$ed' ", array(10), array());
     if ($rs === false)
       echo "101, \"".kwcr2_geterrormsg($__db, 1)."\"";
     else {

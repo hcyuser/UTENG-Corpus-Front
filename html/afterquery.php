@@ -12,11 +12,11 @@
     $br = "<br/>";
 
     if($_POST["sd"] && $_POST["ed"] && $_POST["so"] && $_POST["eo"] &&  $_POST["school"] ){
-      $sd = $mysqli->escape_string($_POST["sd"]);
-      $ed =  $mysqli->escape_string($_POST["ed"]);
-      $so =  $mysqli->escape_string($_POST["so"]);
-      $eo =  $mysqli->escape_string($_POST["eo"]);
-      $school =  $mysqli->escape_string($_POST["school"]);
+      $sd = trim($_POST["sd"]);
+      $ed = trim($_POST["ed"]);
+      $so = trim($_POST["so"]);
+      $eo = trim($_POST["eo"]);
+      $school = trim($_POST["school"]);
     }
 
     $myfile = fopen("./txtoutput/".$school."-".$so.".txt", "w") or die("Unable to open file!");
@@ -24,7 +24,7 @@
     if ($rs === false)
       echo "101, \"".kwcr2_geterrormsg($__db, 1)."\"";
     else {
-      
+
       foreach ($rs as $r)
         $show = $row['id'].":".$row['tid'].":".$row['quality'].":".$row['content'];
         fwrite($myfile, $show."\r\n");

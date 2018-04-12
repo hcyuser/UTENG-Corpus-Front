@@ -19,7 +19,7 @@
     if ($r === false){
   		echo "101, \"".kwcr2_geterrormsg($__db, 1)."\"";
   	}else {
-        echo "Query Result:".$br.implode(" ", $r);
+        echo "Query Result:".implode(" ", $r);
   	}
 
 

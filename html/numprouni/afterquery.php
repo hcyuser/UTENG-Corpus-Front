@@ -15,19 +15,15 @@
       $school = trim($_POST["school"]);
     }
 
-    $rs=read_multi_record($__db, "SELECT COUNT(*) FROM professor WHERE school = '$school' ",array(),array());
-    if ($rs === false){
-      echo "101, \"".kwcr2_geterrormsg($__db, 1)."\"";
-      echo $rs;
+    $r = read_one_record($__db, "SELECT COUNT(*) FROM professor WHERE school = '$school' ", array());
+    if ($r === false){
+  		echo "101, \"".kwcr2_geterrormsg($__db, 1)."\"";
+  	}else {
+        echo "Query Result:".$br.$r;
+  	}
 
-    }else {
 
-      foreach ($rs as $r){
-        $show = $row['COUNT(*)'];
 
-      }
-      echo "Query Result:".$br.$show;
 
-    }
     kwcr2_unmapdb($__db);
 ?>

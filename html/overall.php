@@ -44,15 +44,15 @@
           <input type="text" class="form-control" name="school" value="University of Delaware" required><br>
         </div>
         <div class="form-group">
-          <label>Start DateYYYY-MM-DD:</label>
+          <label>Start Date MM/DD/YYYY:</label>
           <br>
-          <input type="text" class="form-control" name="sd" value="2014-01-01" required><br>
+          <input type="text" class="form-control" name="sd" value="01/01/2014" required><br>
         </div>
 
         <div class="form-group">
-          <label>End Date YYYY-MM-DD:</label>
+          <label>End Date MM/DD/YYYY:</label>
           <br>
-          <input type="text" class="form-control" name="ed" value="2017-12-31" required><br>
+          <input type="text" class="form-control" name="ed" value="12/31/2017" required><br>
         </div>
 
         <div class="form-group">

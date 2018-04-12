@@ -27,9 +27,12 @@
 
     }else {
 
-      foreach ($rs as $r)
+      foreach ($rs as $r){
         $show = $row['id'].":".$row['tid'].":".$row['quality'].":".$row['content'];
         fwrite($myfile, $show."\r\n");
+
+      }
+
     }
     fclose($myfile);
     echo "Query Result:".$br;

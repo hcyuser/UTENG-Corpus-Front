@@ -18,7 +18,9 @@
       $eo = trim($_POST["eo"]);
       $school = trim($_POST["school"]);
     }
-
+    if(file_exists("../txtoutput/".$school."-".$so.".txt")){
+            unlink("../txtoutput/".$school."-".$so.".txt");
+    }
     $myfile = fopen("../txtoutput/".$school."-".$so.".txt", "w") or die("Unable to open file!");
     $rs=read_multi_record($__db, "SELECT * FROM response WHERE tid IN (SELECT id FROM professor WHERE quality >= '$so' AND quality <= '$eo' AND school like '$school') AND quality >= '$so' AND quality <= '$eo' AND C_DATE >= '$sd' AND C_DATE <= '$ed' ",array(),array());
     if ($rs === false){

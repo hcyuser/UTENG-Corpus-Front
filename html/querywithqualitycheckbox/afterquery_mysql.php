@@ -36,6 +36,9 @@ if ($result = mysqli_query($mysqli,$sql)) {
     //print_r($result);
     /* fetch associative array */
     //$randtxt = rand();
+    if(file_exists("../txtoutput/".$school."-".$so.".txt")){
+            unlink("../txtoutput/".$school."-".$so.".txt");
+    }
     $myfile = fopen("../txtoutput/".$school."-".$so.".txt", "w") or die("Unable to open file!");
     while ($row = $result->fetch_assoc()) {
       if(isset($_POST['cb1']) && (1.0<= $row['quality'] && $row['quality']<= 1.9)){

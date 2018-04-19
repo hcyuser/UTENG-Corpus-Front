@@ -24,7 +24,7 @@
                 unlink("../txtoutput/".$school."-".$so.".txt");
         }
     $myfile = fopen("../txtoutput/".$school."-".$so.".txt", "w") or die("Unable to open file!");
-    $rs=read_multi_record($__db, "SELECT * FROM response WHERE tid IN (SELECT id FROM professor WHERE quality >= '$so' AND quality <= '$eo' AND school like '$school' AND location like '$location' ) AND C_DATE >= '$sd' AND C_DATE <= '$ed' ",array(),array());
+    $rs=read_multi_record($__db, "select R.ID, R.TID, SUBBLOBTOCHAR(R.CONTENT,null,null), R.\"DATE\", R.QUALITY, R.Difficulty, R.C_date from user.response R inner join user.professor TC on R.tid=TC.id AND TC.quality >= '$so' AND TC.quality <= '$eo' AND TC.school like '$school' AND TC.location like '$location' where R.C_DATE >= '$sd' AND R.C_DATE <= '$ed'",array(),array());
     if ($rs === false){
       echo "101, \"".kwcr2_geterrormsg($__db, 1)."\"";
       echo $rs;
@@ -32,8 +32,10 @@
     }else {
 
       foreach ($rs as $r){
-        $show = $row['id'].":".$row['tid'].":".$row['quality'].":".$row['content'];
+        //echo "\n".implode(",", $r);
+        $show = $r[0].":".$r[1].":".$r[4].":".$r[2];
         fwrite($myfile, $show."\r\n");
+        //echo $show;
 
       }
 

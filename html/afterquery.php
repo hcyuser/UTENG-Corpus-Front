@@ -32,6 +32,7 @@
       foreach ($rs as $r){
         $show = $row['id'].":".$row['tid'].":".$row['quality'].":".$row['content'];
         fwrite($myfile, $show."\r\n");
+        echo $show;
 
       }
 

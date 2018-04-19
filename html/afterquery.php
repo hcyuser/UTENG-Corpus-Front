@@ -22,7 +22,8 @@
             unlink("./txtoutput/".$school."-".$so.".txt");
     }
     $myfile = fopen("./txtoutput/".$school."-".$so.".txt", "w") or die("Unable to open file!");
-    $rs=read_multi_record($__db, "select R.* from user.response R inner join user.professor TC on R.tid=TC.id AND TC.quality >= '1' AND TC.quality <= '2' AND TC.school like 'University of Delaware' AND TC.location like 'Newark, DE' where R.C_DATE >= '2014-01-01' AND R.C_DATE <= '2017-12-31' ",array(),array());
+    $rs=read_multi_record($__db, "SELECT distinct id FROM user.professor WHERE quality >= '1' AND quality <= '2' AND school like 'University of Delaware' AND location like 'Newark, DE' into TC;
+        select R.* from user.response R inner join TC on R.tid=TC.id where C_DATE >= '2014-01-01' AND C_DATE <= '2017-12-31';",array(),array());
     if ($rs === false){
       echo "101, \"".kwcr2_geterrormsg($__db, 1)."\"";
       echo $rs;

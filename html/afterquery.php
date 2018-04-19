@@ -22,7 +22,7 @@
             unlink("./txtoutput/".$school."-".$so.".txt");
     }
     $myfile = fopen("./txtoutput/".$school."-".$so.".txt", "w") or die("Unable to open file!");
-    $rs=read_multi_record($__db, "SELECT * FROM response WHERE tid IN (SELECT id FROM professor WHERE quality >= '$so' AND quality <= '$eo' AND school like '$school') AND C_DATE >= '$sd' AND C_DATE<= '$ed' ",array(),array());
+    $rs=read_multi_record($__db, "select R.* from user.response R inner join user.professor TC on R.tid=TC.id AND TC.quality >= '$so' AND TC.quality <= '$eo' AND TC.school like 'University of Delaware' where R.C_DATE >= '$sd' AND R.C_DATE <= '$ed' ",array(),array());
     if ($rs === false){
       echo "101, \"".kwcr2_geterrormsg($__db, 1)."\"";
       echo $rs;
@@ -37,8 +37,8 @@
 
     }
     fclose($myfile);
-    echo "Query Result:".$br;
-    echo "<html><a href=\"";
+    echo "<html>Query Result:".$br;
+    echo "<a href=\"";
     echo "http://uteng.hcy.idv.tw/txtoutput/".$school."-".$so.".txt";
     echo "\">Download Here</a></html>";
     kwcr2_unmapdb($__db);

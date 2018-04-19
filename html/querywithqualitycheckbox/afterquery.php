@@ -1,5 +1,5 @@
 <?php
-    header('Content-Type: text/plain; charset="utf-8"');
+    header('Content-Type: text/html; charset="utf-8"');
     header('Content-Disposition: inline; filename="result.txt"');
     require_once('common.Utility.php');
     //connect db

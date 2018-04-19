@@ -30,8 +30,9 @@
     }else {
 
       foreach ($rs as $r){
-        $show = $r['id'].":".$r['tid'].":".$r['quality'].":".$r['content'];
-        fwrite($myfile, $show."\r\n");
+        echo "\n".implode(":", $r);
+        //$show = $r['id'].":".$r['tid'].":".$r['quality'].":".$r['content'];
+        //fwrite($myfile, $show."\r\n");
         echo $show;
 
       }

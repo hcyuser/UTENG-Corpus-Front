@@ -40,10 +40,15 @@
 
     }
     fclose($myfile);
-    echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">'; 
-    echo "<html>Query Result:".$br;
-    echo "<a href=\"";
-    echo "http://tcu.cyberhood.net/UT_ENG_Front/html/txtoutput/".$school."-".$so.".txt";
-    echo "\">Download Here</a></html>";
     kwcr2_unmapdb($__db);
+?>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<?php
+echo "<html>Query Result:".$br;
+echo "<a href=\"";
+echo "http://tcu.cyberhood.net/UT_ENG_Front/html/txtoutput/".$school."-".$so.".txt";
+echo "\">Download Here</a></html>";
+
 ?>

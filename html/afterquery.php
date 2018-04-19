@@ -39,7 +39,7 @@
     fclose($myfile);
     echo "<html>Query Result:".$br;
     echo "<a href=\"";
-    echo "http://uteng.hcy.idv.tw/txtoutput/".$school."-".$so.".txt";
+    echo "http://tcu.cyberhood.net/UT_ENG_Front/html/txtoutput/".$school."-".$so.".txt";
     echo "\">Download Here</a></html>";
     kwcr2_unmapdb($__db);
 ?>

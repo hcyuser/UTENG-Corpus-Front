@@ -37,7 +37,7 @@
         $show = $r[0].":".$r[1].":".$r[4].":".$r[2];
         //fwrite($myfile, $show."\r\n");
         //fflush($myfile);
-        echo $show."\r\n" ;
+        echo $show.""<br>"" ;
 
       }
 

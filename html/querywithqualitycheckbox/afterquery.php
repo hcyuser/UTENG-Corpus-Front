@@ -34,23 +34,23 @@
       foreach ($rs as $r){
         if(isset($_POST['cb1']) && (1.0<= $r[4] && $r[4]<= 1.9)){
           $show = $r[0].":".$r[1].":".$r[4].":".$r[2];
-          echo $show."\r\n" ;
+          echo $show."<br>" ;
           //fwrite($myfile, $show."\r\n");
         }else if(isset($_POST['cb2']) && (2.0<= $r[4] && $r[4]<= 2.9)){
           $show = $r[0].":".$r[1].":".$r[4].":".$r[2];
-          echo $show."\r\n" ;
+          echo $show."<br>" ;
           //fwrite($myfile, $show."\r\n");
         }else if(isset($_POST['cb3']) && (3.0<= $r[4] && $r[4]<= 3.9)){
           $show = $r[0].":".$r[1].":".$r[4].":".$r[2];
-          echo $show."\r\n" ;
+          echo $show."<br>" ;
           //fwrite($myfile, $show."\r\n");
         }else if(isset($_POST['cb4']) && (4.0<= $r[4] && $r[4]<= 4.9)){
           $show = $r[0].":".$r[1].":".$r[4].":".$r[2];
-          echo $show."\r\n" ;
+          echo $show."<br>" ;
           //fwrite($myfile, $show."\r\n");
         }else if(isset($_POST['cb5']) && (5.0<= $r[4] &&  $r[4]<= 5.9)){
           $show = $r[0].":".$r[1].":".$r[4].":".$r[2];
-          echo $show."\r\n" ;
+          echo $show."<br>" ;
           //fwrite($myfile, $show."\r\n");
         }
 

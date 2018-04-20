@@ -22,8 +22,8 @@
             unlink("../txtoutput/".$school."-".$so.".txt");
     }
     $myfile = fopen("../txtoutput/".$school."-".$so.".txt", "w") or die("Unable to open file!"); */
-    $random = rand();
-    $myfile = fopen("../txtoutput/".$random.".txt", "w") or die("Unable to open file!");
+    //$random = rand();
+    //$myfile = fopen("../txtoutput/".$random.".txt", "w") or die("Unable to open file!");
     $rs=read_multi_record($__db, "select R.ID, R.TID, SUBBLOBTOCHAR(R.CONTENT,null,null), R.\"DATE\", R.QUALITY, R.Difficulty, R.C_date from user.response R inner join user.professor TC on R.tid=TC.id AND TC.quality >= '$so' AND TC.quality <= '$eo' AND TC.school like '$school' where R.C_DATE >= '$sd' AND R.C_DATE <= '$ed' AND  R.quality >= '$so' AND R.quality <= '$eo' ",array(),array());
     if ($rs === false){
       echo "101, \"".kwcr2_geterrormsg($__db, 1)."\"";
@@ -34,16 +34,16 @@
       foreach ($rs as $r){
         //echo "\n".implode(",", $r);
         $show = $r[0].":".$r[1].":".$r[4].":".$r[2];
-        fwrite($myfile, $show."\r\n");
-        //echo $show;
+        //fwrite($myfile, $show."\r\n");
+        echo $show."\r\n" ;
 
       }
 
     }
-    fclose($myfile);
-    echo "Query Result:".$br;
-    echo "<html><a href=\"";
-    echo "http://tcu.cyberhood.net/UT_ENG_Front/html/txtoutput/".$random.".txt";
-    echo "\">Download Here</a></html>";
+    //fclose($myfile);
+    //echo "Query Result:".$br;
+    //echo "<html><a href=\"";
+    //echo "http://tcu.cyberhood.net/UT_ENG_Front/html/txtoutput/".$random.".txt";
+    //echo "\">Download Here</a></html>";
     kwcr2_unmapdb($__db);
 ?>

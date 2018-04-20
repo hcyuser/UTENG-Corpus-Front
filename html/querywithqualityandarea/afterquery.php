@@ -37,7 +37,7 @@
         //echo "\n".implode(",", $r);
         $show = $r[0].":".$r[1].":".$r[4].":".$r[2];
         //fwrite($myfile, $show."\r\n");
-        echo $show.""<br/>"" ;
+        echo $show."<br/>" ;
 
       }
 

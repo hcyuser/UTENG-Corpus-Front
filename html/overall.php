@@ -44,7 +44,7 @@
           <input type="text" class="form-control" name="school" value="University of Delaware" required><br>
         </div>
         <div class="form-group">
-          <label>Start Date YYYY-MM-DD:</label>
+          <label>Start DateYYYY-MM-DD:</label>
           <br>
           <input type="text" class="form-control" name="sd" value="2014-01-01" required><br>
         </div>

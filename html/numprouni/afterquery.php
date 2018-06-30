@@ -1,29 +1,53 @@
 <?php
-    header('Content-Type: text/html; charset="utf-8"');
-    header('Content-Disposition: inline; filename="result.txt"');
-    require_once('common.Utility.php');
-    //connect db
-    $__db=kwcr2_mapdb("RATING", 'user', 'user');
-    if ($__db===0) {
-      echo "100, \"connect db failed!\"";
-      return;
+$host = "104.199.250.176";
+$user = "hcyidvtw";
+$password = "hcyidvtw";
+$database = "rating";
+$mysqli = new mysqli($host, $user, $password, $database);
+
+$br = "<br/>";
+
+/* check connection */
+if ($mysqli->connect_errno) {
+    echo "Error: Unable to connecct to MySQL.<br/>";
+    echo "Debugging errno: " . $mysqli->errno . $br;
+    echo "Debugging error: " . $mysqli->error . $br;
+    exit;
+}
+
+//echo "Success: A proper connection to MySQL was made! The $database database is great." . $br;
+//echo "Host information: " . $mysqli->host_info . $br;
+?>
+<?php
+//print_r($_POST);
+  if($_POST["school"] ){
+
+    $school =  $mysqli->escape_string($_POST["school"]);
+  }
+$sql = "SELECT COUNT(*) FROM professor WHERE school = '$school'";
+//echo "\$mysqli -> query(\"$sql\")" . $br;
+//$escape = $mysqli->escape_string($sql);
+//echo $escape;
+//echo "Query Result: ".$br;
+if ($result = mysqli_query($mysqli,$sql)) {
+
+    while ($row = $result->fetch_assoc()) {
+        $show = $row['COUNT(*)'];
+
     }
 
-    $br = "<br/>";
-
-    if($_POST["school"]){
-      $school = trim($_POST["school"]);
-    }
-
-    $r = read_one_record($__db, "SELECT COUNT(*) FROM professor WHERE school = '$school' ", array());
-    if ($r === false){
-  		echo "101, \"".kwcr2_geterrormsg($__db, 1)."\"";
-  	}else {
-        echo "Query Result:".implode(" ", $r);
-  	}
+    echo "Query Result:".$br.$show;
+    $result->free();
+}else{
+  //print_r($result);
+  echo "Error: Unable to connecct to MySQL.<br/>";
+  echo "Debugging errno: " . $mysqli->errno . $br;
+  echo "Debugging error: " . $mysqli->error . $br;
+  exit;
+}
+?>
 
 
-
-
-    kwcr2_unmapdb($__db);
+<?php
+  $mysqli->close();
 ?>
